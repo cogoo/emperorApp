@@ -1,0 +1,13 @@
+<h1>{{title}}</h1>
+<h2>My Emperors</h2>
+<ul class="emperors">
+	<li *ngFor="let emperor of emperors" 
+		(click)="onselect(emperor)"
+		[class.selected]="emperor === selectedEmperor"
+		>
+		<span class="badge">{{emperor.id}}</span> {{emperor.name}}
+		<!-- each emperor goes here -->
+	</li>
+</ul>
+
+<app-emperor-detail [emperor]="selectedEmperor"></app-emperor-detail>
