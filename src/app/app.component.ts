@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
-import { MainComponent } from './main/main.component';
 import { EmperorService } from './common-service/emperor.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { EmperorService } from './common-service/emperor.service';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  directives: [MainComponent],
+  directives: [ROUTER_DIRECTIVES],
   providers: [EmperorService]
 })
 export class AppComponent implements OnInit {

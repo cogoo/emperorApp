@@ -30,7 +30,6 @@ export class MainComponent implements OnInit {
 							.then(emperors => this.emperors = emperors);
 	};
 
-  title = 'Tour of Roman Emperors';
   emperors: Emperor[];
   selectedEmperor: Emperor;
 

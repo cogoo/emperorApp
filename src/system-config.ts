@@ -38,6 +38,7 @@ const barrels: string[] = [
   'app/shared',
   'app/emperor-detail',
   'app/main',
+  'app/dashboard',
   /** @cli-barrel */
 ];
 

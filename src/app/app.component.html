@@ -1,3 +1,7 @@
 <h1>{{title}}</h1>
+<nav>
+	<a [routerLink]="['/dashboard']">Dashboard</a>
+	<a [routerLink]="['/emperors']">Emperors</a>
+</nav>
 
-<app-main></app-main>
+<router-outlet></router-outlet>

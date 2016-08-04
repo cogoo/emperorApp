@@ -1,0 +1,8 @@
+<h3>{{title}}</h3>
+<div class="grid grid-pad">
+	<div *ngFor="let emperor of emperors" (click)="gotoDetail(emperor)" class="col-1-4">
+		<div class="module emperor">
+			<h4>{{emperor.name}}</h4>
+		</div>
+	</div>
+</div>
