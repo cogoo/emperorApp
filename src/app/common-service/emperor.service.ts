@@ -11,4 +11,9 @@ export class EmperorService {
   	return Promise.resolve(EMPERORS);
   }
 
+  getEmperor(id: number) {
+  	return this.getEmperors()
+  				.then(emperors => emperors.find(emperor => emperor.id === id));
+  }
+
 }

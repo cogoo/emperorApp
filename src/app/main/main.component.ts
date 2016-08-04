@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 import { Emperor } from '../shared/emperor';
 import { EmperorDetailComponent } from '../emperor-detail/emperor-detail.component';
@@ -14,7 +16,10 @@ import { EmperorService } from '../common-service/emperor.service';
 })
 export class MainComponent implements OnInit {
 
-  constructor(private emperorService: EmperorService) { }
+  constructor(
+    private emperorService: EmperorService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
   	this.getEmperors();
@@ -29,6 +34,10 @@ export class MainComponent implements OnInit {
 							.getEmperors()
 							.then(emperors => this.emperors = emperors);
 	};
+
+  gotoDetail() {
+    this.router.navigate(['/detail',this.selectedEmperor.id])
+  }
 
   emperors: Emperor[];
   selectedEmperor: Emperor;

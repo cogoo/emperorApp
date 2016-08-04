@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Emperor } from '../shared/emperor';
 import { EmperorService } from '../common-service/emperor.service';
-
 
 
 @Component({
@@ -13,9 +13,12 @@ import { EmperorService } from '../common-service/emperor.service';
 })
 export class DashboardComponent implements OnInit {
 
-	emperors: Emperor[] = [];
+  emperors: Emperor[] = [];
 
-  constructor(private emperorService: EmperorService) { }
+  constructor(
+  	private emperorService: EmperorService,
+  	private router: Router
+  	) { }
 
   ngOnInit() {
   	this.emperorService
@@ -23,8 +26,9 @@ export class DashboardComponent implements OnInit {
   		.then(emperors => this.emperors = emperors.slice(1,5));
   }
 
-  gotoDetail() {
-  	
+  gotoDetail(emperor: Emperor) {
+  	let link = ['/detail', emperor.id];
+  	this.router.navigate(link);
   }
 
   title = 'Top Heroes';

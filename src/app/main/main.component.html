@@ -9,4 +9,9 @@
 	</li>
 </ul>
 
-<app-emperor-detail [emperor]="selectedEmperor"></app-emperor-detail>
+<div *ngIf="selectedEmperor">
+	<h2>
+		{{selectedEmperor.name | uppercase}} is my emperor
+	</h2>
+	<button (click)="gotoDetail()" >View Details</button>
+</div>

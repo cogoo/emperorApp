@@ -1,6 +1,8 @@
 import {provideRouter, RouterConfig} from '@angular/router';
+
 import { MainComponent } from './main/main.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EmperorDetailComponent } from './emperor-detail/emperor-detail.component';
 
 const routes: RouterConfig = [
 	{
@@ -10,6 +12,10 @@ const routes: RouterConfig = [
 	{
 		path: 'dashboard',
 		component: DashboardComponent
+	},
+	{
+		path: 'detail/:id',
+		component: EmperorDetailComponent
 	},
 	{
 		path: '',
