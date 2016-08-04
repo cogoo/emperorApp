@@ -8,9 +8,7 @@ export class EmperorService {
   constructor() { }
 
   getEmperors() {
-  	// return Promise.resolve(EMPERORS);
-  	return EMPERORS;
-
+  	return Promise.resolve(EMPERORS);
   }
 
 }

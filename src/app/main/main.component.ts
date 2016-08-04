@@ -10,7 +10,7 @@ import { EmperorService } from '../common-service/emperor.service';
   templateUrl: 'main.component.html',
   styleUrls: ['main.component.css'],
   directives: [EmperorDetailComponent],
-  providers: [EmperorService]
+  providers: []
 })
 export class MainComponent implements OnInit {
 
@@ -25,9 +25,9 @@ export class MainComponent implements OnInit {
 	};
 
 	getEmperors() {
-		this.emperors = this.emperorService
-							.getEmperors();
-							// .then(emperors => this.emperors = emperors);
+		this.emperorService
+							.getEmperors()
+							.then(emperors => this.emperors = emperors);
 	};
 
   title = 'Tour of Roman Emperors';
